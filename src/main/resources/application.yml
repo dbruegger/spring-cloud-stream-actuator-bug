@@ -1,0 +1,18 @@
+server:
+  port: 8090
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+spring:
+  jackson:
+    visibility:
+      field: ANY
+  cloud:
+    stream:
+      function:
+        definition: consume
+      bindings:
+        consume-in-0:
+          destination: my-topic
